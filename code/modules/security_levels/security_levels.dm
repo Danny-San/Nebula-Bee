@@ -69,6 +69,7 @@ GLOBAL_VAR_INIT(security_level, SEC_LEVEL_GREEN)
 					else if(GLOB.security_level == SEC_LEVEL_BLUE)
 						SSshuttle.emergency.modTimer(0.5)
 				GLOB.security_level = SEC_LEVEL_DELTA
+				sound_to_playing_players('sound/misc/deltakalaxon.ogg')
 				for(var/obj/machinery/firealarm/FA in GLOB.machines)
 					if(is_station_level(FA.z))
 						FA.update_icon()
