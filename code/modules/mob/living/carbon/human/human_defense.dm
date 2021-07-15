@@ -142,7 +142,7 @@
 	if(istype(AM, /obj/item))
 		I = AM
 		throwpower = I.throwforce
-		if(I.thrownby == src) //No throwing stuff at yourself to trigger hit reactions
+		if(I.thrownby == WEAKREF(src)) //No throwing stuff at yourself to trigger hit reactions
 			return ..()
 	if(check_shields(AM, throwpower, "\the [AM.name]", THROWN_PROJECTILE_ATTACK))
 		hitpush = FALSE
@@ -661,7 +661,7 @@
 			gain = 100
 		if(mind.assigned_role == "Clown")
 			gain = rand(-1000, 1000)
-	investigate_log("([key_name(src)]) has been consumed by the singularity.", INVESTIGATE_SINGULO) //Oh that's where the clown ended up!
+	investigate_log("([key_name(src)]) has been consumed by the singularity.", INVESTIGATE_ENGINES) //Oh that's where the clown ended up!
 	gib()
 
 	return(gain)
